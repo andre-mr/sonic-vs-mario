@@ -1,0 +1,1498 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Level",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 439952232103320
+		},
+		{
+			"eventType": "variable",
+			"name": "ScoreMario",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 815649499529438
+		},
+		{
+			"eventType": "variable",
+			"name": "ScoreSonic",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 287596016219103
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Sonic",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 370060985371164,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Sonic",
+							"sid": 153518849616546,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Sonic",
+							"sid": 889762445879512,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 976883561512476
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 444287103466840,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Sonic",
+							"sid": 865214942337369,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Sonic",
+							"sid": 790771700566746,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 704608564101806
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 897568980071919,
+							"parameters": {
+								"key": 87
+							}
+						},
+						{
+							"id": "is-on-floor",
+							"objectClass": "Sonic",
+							"sid": 247569735972835,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 677390323797795,
+							"parameters": {
+								"audio-file": "SonicJump",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 532385667588548
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 411247381093289,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Sonic",
+							"sid": 138413852324361,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						}
+					],
+					"sid": 270411090250995
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-floor",
+							"objectClass": "Sonic",
+							"sid": 471182466365262,
+							"behaviorType": "Platform",
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Sonic",
+							"sid": 883551903047696,
+							"parameters": {
+								"animation": "\"Jump\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 887549677024165
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-floor",
+							"objectClass": "Sonic",
+							"sid": 744752232069455,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [],
+					"sid": 326643127821107,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-speed",
+									"objectClass": "Sonic",
+									"sid": 503208372899858,
+									"behaviorType": "Platform",
+									"parameters": {
+										"comparison": 3,
+										"speed": "10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Sonic",
+									"sid": 507204959954365,
+									"parameters": {
+										"animation": "\"Idle\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 722415802452450
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-speed",
+									"objectClass": "Sonic",
+									"sid": 651877864205654,
+									"behaviorType": "Platform",
+									"parameters": {
+										"comparison": 4,
+										"speed": "10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Sonic",
+									"sid": 573418263779072,
+									"parameters": {
+										"animation": "\"Walk\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 960129222023296
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Sonic",
+							"sid": 973096483744377,
+							"parameters": {
+								"object": "Mario"
+							}
+						},
+						{
+							"id": "compare-y",
+							"objectClass": "Sonic",
+							"sid": 226824339882100,
+							"parameters": {
+								"comparison": 2,
+								"y-co-ordinate": "Mario.Y-24-16"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Mario",
+							"sid": 766721798871995,
+							"parameters": {
+								"instance-variable": "Invincible"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Sonic",
+							"sid": 499822111927094,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Mario",
+							"sid": 670678276348097,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 969594931080401,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Mario",
+									"sid": 929186668558899,
+									"parameters": {
+										"instance-variable": "Health",
+										"comparison": 2,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 115413365097025,
+									"parameters": {
+										"audio-file": "MarioLoose",
+										"loop": "not-looping",
+										"volume": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Mario",
+									"sid": 167645520550187
+								},
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 892430483005808,
+									"parameters": {
+										"tag": "\"Music\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 356176314998114,
+									"parameters": {
+										"seconds": "1.0"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 972739695935274,
+									"parameters": {
+										"audio-file": "SonicWin",
+										"loop": "not-looping",
+										"volume": "20",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 454085083914498,
+									"parameters": {
+										"variable": "ScoreSonic",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "SonicScoreText",
+									"sid": 569090018190698,
+									"parameters": {
+										"text": "ScoreSonic"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "VictoryText",
+									"sid": 154184754748370,
+									"parameters": {
+										"text": "\"Sonic Wins!\""
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "VictoryText",
+									"sid": 641347045543167,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 726484533515532,
+									"parameters": {
+										"seconds": "5.0"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "StartButton",
+									"sid": 195108496171685,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "StartButtonText",
+									"sid": 746408257986446,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 632632884498519
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Mario",
+									"sid": 112419948755740,
+									"parameters": {
+										"instance-variable": "Health",
+										"comparison": 2,
+										"value": "0"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 586098109639651,
+									"parameters": {
+										"audio-file": "MarioDamage",
+										"loop": "not-looping",
+										"volume": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "Mario",
+									"sid": 532100724352339,
+									"parameters": {
+										"width": "Mario.Width/2",
+										"height": "Mario.Height/2"
+									}
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "Mario",
+									"sid": 180412486398885,
+									"parameters": {
+										"opacity": "50"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Mario",
+									"sid": 506469288215418,
+									"parameters": {
+										"instance-variable": "Invincible",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-solid-collision-filter",
+									"objectClass": "Sonic",
+									"sid": 669567499854014,
+									"parameters": {
+										"mode": "exclusive",
+										"tags": "\"player\""
+									}
+								},
+								{
+									"id": "set-solid-collision-filter",
+									"objectClass": "Mario",
+									"sid": 447929840122126,
+									"parameters": {
+										"mode": "exclusive",
+										"tags": "\"player\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 771126414486522,
+									"parameters": {
+										"seconds": "5"
+									}
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "Mario",
+									"sid": 205667879456332,
+									"parameters": {
+										"opacity": "100"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Mario",
+									"sid": 741476857045097,
+									"parameters": {
+										"instance-variable": "Invincible",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-solid-collision-filter",
+									"objectClass": "Sonic",
+									"sid": 774094509810893,
+									"parameters": {
+										"mode": "exclusive",
+										"tags": "\"\""
+									}
+								},
+								{
+									"id": "set-solid-collision-filter",
+									"objectClass": "Mario",
+									"sid": 132887434419666,
+									"parameters": {
+										"mode": "exclusive",
+										"tags": "\"\""
+									}
+								}
+							],
+							"sid": 571573968713984
+						}
+					]
+				}
+			],
+			"sid": 295223478136558
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Mario",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 898479702443332,
+							"parameters": {
+								"key": 39
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Mario",
+							"sid": 547652080803689,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Mario",
+							"sid": 435766376761189,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 866326287271959
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 314433097979547,
+							"parameters": {
+								"key": 37
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Mario",
+							"sid": 626192346295799,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Mario",
+							"sid": 495062052063876,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 512091197160207
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 606676891472120,
+							"parameters": {
+								"key": 38
+							}
+						},
+						{
+							"id": "is-on-floor",
+							"objectClass": "Mario",
+							"sid": 665064200213032,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 852148253445445,
+							"parameters": {
+								"audio-file": "MarioJump",
+								"loop": "not-looping",
+								"volume": "200",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 575762527585142
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 151176228745203,
+							"parameters": {
+								"key": 38
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Mario",
+							"sid": 693537880829293,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						}
+					],
+					"sid": 572122912298594
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-floor",
+							"objectClass": "Mario",
+							"sid": 254757464086274,
+							"behaviorType": "Platform",
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Mario",
+							"sid": 186521021335470,
+							"parameters": {
+								"animation": "\"Jump\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 239086061592221
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-floor",
+							"objectClass": "Mario",
+							"sid": 640238141476707,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [],
+					"sid": 573217397306026,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-speed",
+									"objectClass": "Mario",
+									"sid": 363947674101864,
+									"behaviorType": "Platform",
+									"parameters": {
+										"comparison": 3,
+										"speed": "10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Mario",
+									"sid": 981354063063804,
+									"parameters": {
+										"animation": "\"Idle\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 551780417289855
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-speed",
+									"objectClass": "Mario",
+									"sid": 325821205592351,
+									"behaviorType": "Platform",
+									"parameters": {
+										"comparison": 4,
+										"speed": "10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Mario",
+									"sid": 542702853255936,
+									"parameters": {
+										"animation": "\"Walk\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 200255294879899
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Mario",
+							"sid": 753381775895513,
+							"parameters": {
+								"object": "Sonic"
+							}
+						},
+						{
+							"id": "compare-y",
+							"objectClass": "Mario",
+							"sid": 382056640558339,
+							"parameters": {
+								"comparison": 2,
+								"y-co-ordinate": "Sonic.Y-14-16"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Sonic",
+							"sid": 228366668594689,
+							"parameters": {
+								"instance-variable": "Invencible"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Mario",
+							"sid": 182779501379149,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Sonic",
+							"sid": 407276092788872,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 295481495457368,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Sonic",
+									"sid": 887208701956969,
+									"parameters": {
+										"instance-variable": "Health",
+										"comparison": 2,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 471370302673242,
+									"parameters": {
+										"audio-file": "SonicLoose",
+										"loop": "not-looping",
+										"volume": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Sonic",
+									"sid": 260066783562511
+								},
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 538542396259906,
+									"parameters": {
+										"tag": "\"Music\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 349733212362748,
+									"parameters": {
+										"seconds": "1.0"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 767239626195108,
+									"parameters": {
+										"audio-file": "MarioWin",
+										"loop": "not-looping",
+										"volume": "20",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 507959903131578
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 957660389033832,
+									"parameters": {
+										"variable": "ScoreMario",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "MarioScoreText",
+									"sid": 969019066314010,
+									"parameters": {
+										"text": "ScoreMario"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "VictoryText",
+									"sid": 910141892049198,
+									"parameters": {
+										"text": "\"Mario Wins!\""
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "VictoryText",
+									"sid": 113299971803528,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 580909462226633,
+									"parameters": {
+										"seconds": "5.0"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "StartButton",
+									"sid": 996161882300475,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "StartButtonText",
+									"sid": 255506757770653,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 242231229685524
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Sonic",
+									"sid": 277494273700946,
+									"parameters": {
+										"instance-variable": "Health",
+										"comparison": 2,
+										"value": "0"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 670435424563847,
+									"parameters": {
+										"audio-file": "SonicDamage",
+										"loop": "not-looping",
+										"volume": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "Sonic",
+									"sid": 451196411362724,
+									"parameters": {
+										"width": "Sonic.Width/2",
+										"height": "Sonic.Height/2"
+									}
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "Sonic",
+									"sid": 502169179598906,
+									"parameters": {
+										"opacity": "50"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Sonic",
+									"sid": 729185827833586,
+									"parameters": {
+										"instance-variable": "Invencible",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-solid-collision-filter",
+									"objectClass": "Mario",
+									"sid": 428921317985188,
+									"parameters": {
+										"mode": "exclusive",
+										"tags": "\"player\""
+									}
+								},
+								{
+									"id": "set-solid-collision-filter",
+									"objectClass": "Sonic",
+									"sid": 478215186697235,
+									"parameters": {
+										"mode": "exclusive",
+										"tags": "\"player\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 275261979445893,
+									"parameters": {
+										"seconds": "5"
+									}
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "Sonic",
+									"sid": 653167537726005,
+									"parameters": {
+										"opacity": "100"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Sonic",
+									"sid": 829284180787728,
+									"parameters": {
+										"instance-variable": "Invencible",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-solid-collision-filter",
+									"objectClass": "Mario",
+									"sid": 638654559103625,
+									"parameters": {
+										"mode": "exclusive",
+										"tags": "\"\""
+									}
+								},
+								{
+									"id": "set-solid-collision-filter",
+									"objectClass": "Sonic",
+									"sid": 618982860401322,
+									"parameters": {
+										"mode": "exclusive",
+										"tags": "\"\""
+									}
+								}
+							],
+							"sid": 716327837398122
+						}
+					]
+				}
+			],
+			"sid": 826414463570117
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 974806039844395
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 462780930665818,
+					"parameters": {
+						"audio-file": "SonicTheme",
+						"loop": "looping",
+						"volume": "0",
+						"tag-optional": "\"Music\""
+					}
+				}
+			],
+			"sid": 870889658607508
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 292472739957184,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "StartButton"
+					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "StartButton",
+					"sid": 345972028357511
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "StartLevel",
+					"sid": 428397784614676
+				}
+			],
+			"sid": 923510268430644
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 367353230797489,
+					"parameters": {
+						"key": 13
+					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "StartButton",
+					"sid": 544241043295483
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "StartLevel",
+					"sid": 314696580530996
+				}
+			],
+			"sid": 983059778489632
+		},
+		{
+			"functionName": "StartLevel",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "VictoryText",
+					"sid": 916116743969585,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Sonic",
+					"sid": 230278276600612
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Mario",
+					"sid": 918751452069475
+				}
+			],
+			"sid": 751304658930687,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 581028165802085,
+							"parameters": {
+								"variable": "Level",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "scroll-to-x",
+							"objectClass": "System",
+							"sid": 542217870909741,
+							"parameters": {
+								"x": "scrollx+1280"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 235263033866545
+						},
+						{
+							"id": "set-x",
+							"objectClass": "SonicScoreText",
+							"sid": 258217095110332,
+							"parameters": {
+								"x": "SonicScoreText.X+1280"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "MarioScoreText",
+							"sid": 886580561084236,
+							"parameters": {
+								"x": "MarioScoreText.X+1280"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "VictoryText",
+							"sid": 285790486835726,
+							"parameters": {
+								"x": "VictoryText.X+1280"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "StartButton",
+							"sid": 446395983460108,
+							"parameters": {
+								"x": "StartButton.X+1280"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "StartButton",
+							"sid": 487393891957589,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "StartButtonText",
+							"sid": 969168462303537,
+							"parameters": {
+								"x": "StartButtonText.X+1280"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "StartButtonText",
+							"sid": 694061299322125,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "StartButtonText",
+							"sid": 818448667056643,
+							"parameters": {
+								"text": "\"START\""
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 311632450522346,
+							"parameters": {
+								"object-to-create": "Sonic",
+								"layer": "1",
+								"x": "1340",
+								"y": "460",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 550941541480091,
+							"parameters": {
+								"object-to-create": "Mario",
+								"layer": "1",
+								"x": "2500",
+								"y": "460",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 398379811577604,
+							"parameters": {
+								"audio-file": "MarioTheme",
+								"loop": "looping",
+								"volume": "0",
+								"tag-optional": "\"Music\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 725364782294791,
+							"parameters": {
+								"variable": "Level",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 847925594373947
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 982241772401059,
+							"parameters": {
+								"variable": "Level",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "scroll-to-x",
+							"objectClass": "System",
+							"sid": 485245604408114,
+							"parameters": {
+								"x": "scrollx-1280"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 510892898122117
+						},
+						{
+							"id": "set-x",
+							"objectClass": "SonicScoreText",
+							"sid": 822075265843508,
+							"parameters": {
+								"x": "SonicScoreText.X-1280"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "MarioScoreText",
+							"sid": 143823412719765,
+							"parameters": {
+								"x": "MarioScoreText.X-1280"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "VictoryText",
+							"sid": 903765013262131,
+							"parameters": {
+								"x": "VictoryText.X-1280"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "StartButton",
+							"sid": 882842193825212,
+							"parameters": {
+								"x": "StartButton.X-1280"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "StartButton",
+							"sid": 342132893609051,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "StartButtonText",
+							"sid": 650415501976949,
+							"parameters": {
+								"x": "StartButtonText.X-1280"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "StartButtonText",
+							"sid": 184062554043324,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "StartButtonText",
+							"sid": 660626663155844,
+							"parameters": {
+								"text": "\"NEXT\""
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 664013179962011,
+							"parameters": {
+								"object-to-create": "Sonic",
+								"layer": "1",
+								"x": "60",
+								"y": "460",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 877435274911783,
+							"parameters": {
+								"object-to-create": "Mario",
+								"layer": "1",
+								"x": "1220",
+								"y": "460",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 537996187468843,
+							"parameters": {
+								"variable": "ScoreMario",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 652264022125989,
+							"parameters": {
+								"variable": "ScoreSonic",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "MarioScoreText",
+							"sid": 236208845455783,
+							"parameters": {
+								"text": "ScoreMario"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "SonicScoreText",
+							"sid": 359354661951574,
+							"parameters": {
+								"text": "ScoreSonic"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 267279738118244,
+							"parameters": {
+								"audio-file": "SonicTheme",
+								"loop": "looping",
+								"volume": "0",
+								"tag-optional": "\"Music\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 741872773166422,
+							"parameters": {
+								"variable": "Level",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 436254753763419
+				}
+			]
+		}
+	],
+	"sid": 724826571004994
+}
